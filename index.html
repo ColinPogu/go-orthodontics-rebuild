@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GO Orthodontics | Braces and Invisalign in Mississippi and Tennessee</title>
+<meta name="description" content="GO Orthodontics has cared for families, friends, and neighbors since 1976. Braces and Invisalign for kids, teens, and adults across seven offices in Mississippi and Tennessee.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#0e8f8a;
+    --teal-dark:#0a6f6b;
+    --teal-deep:#07504d;
+    --accent:#ff8a4c;
+    --accent-dark:#f4712f;
+    --ink:#15282b;
+    --body:#42585b;
+    --muted:#7b8c8e;
+    --line:#e3ebeb;
+    --bg:#ffffff;
+    --bg-soft:#f3f8f7;
+    --bg-mint:#e8f4f2;
+    --white:#ffffff;
+    --radius:18px;
+    --radius-sm:12px;
+    --shadow-sm:0 2px 10px rgba(16,60,58,.06);
+    --shadow:0 14px 40px rgba(16,60,58,.12);
+    --shadow-lg:0 24px 60px rgba(16,60,58,.16);
+    --maxw:1140px;
+    --head:'Poppins',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    --text:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--text);color:var(--body);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3,h4{font-family:var(--head);color:var(--ink);line-height:1.15;letter-spacing:-.01em}
+  a{color:inherit;text-decoration:none}
+  img,svg{display:block;max-width:100%}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .eyebrow{font-family:var(--head);font-weight:600;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
+
+  /* Buttons */
+  .btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--head);font-weight:600;font-size:1rem;padding:.9rem 1.6rem;border-radius:999px;border:2px solid transparent;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,background .15s ease;white-space:nowrap}
+  .btn-primary{background:var(--accent);color:#fff;box-shadow:0 10px 24px rgba(244,113,47,.32)}
+  .btn-primary:hover{transform:translateY(-2px);background:var(--accent-dark)}
+  .btn-teal{background:var(--teal);color:#fff;box-shadow:0 10px 24px rgba(14,143,138,.28)}
+  .btn-teal:hover{transform:translateY(-2px);background:var(--teal-dark)}
+  .btn-ghost{background:transparent;color:var(--teal-dark);border-color:var(--line)}
+  .btn-ghost:hover{border-color:var(--teal);color:var(--teal)}
+  .btn-white{background:#fff;color:var(--teal-dark)}
+  .btn-white:hover{transform:translateY(-2px)}
+  .btn-outline-white{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
+  .btn-outline-white:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+
+  /* Nav */
+  header.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .brand{display:flex;align-items:center;gap:.65rem;font-family:var(--head);font-weight:700;font-size:1.3rem;color:var(--ink)}
+  .brand .mark{width:42px;height:42px;flex:0 0 42px;border-radius:12px;background:linear-gradient(135deg,var(--teal),var(--teal-dark));display:grid;place-items:center;box-shadow:0 6px 16px rgba(14,143,138,.3)}
+  .brand .mark span{font-family:var(--head);font-weight:700;color:#fff;font-size:1.05rem;letter-spacing:.02em}
+  .brand small{display:block;font-family:var(--text);font-weight:500;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:-2px}
+  nav.links{display:flex;align-items:center;gap:1.9rem}
+  nav.links a{font-weight:500;font-size:.95rem;color:var(--ink);transition:color .15s}
+  nav.links a:hover{color:var(--teal)}
+  .nav-cta{display:flex;align-items:center;gap:.9rem}
+  .nav-call{display:inline-flex;align-items:center;gap:.45rem;font-family:var(--head);font-weight:600;color:var(--teal-dark);font-size:.95rem}
+  .menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:6px}
+  .menu-toggle span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0;border-radius:2px}
+
+  /* Hero */
+  .hero{position:relative;background:linear-gradient(160deg,var(--bg-mint) 0%,#f6fbfa 55%,#fff 100%);overflow:hidden}
+  .hero:before{content:"";position:absolute;top:-180px;right:-160px;width:520px;height:520px;background:radial-gradient(circle,rgba(14,143,138,.16),transparent 70%);border-radius:50%}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding:76px 0 84px;position:relative}
+  .hero h1{font-size:clamp(2.2rem,4.6vw,3.5rem);font-weight:700;margin:.6rem 0 1.1rem}
+  .hero h1 .hl{color:var(--teal)}
+  .hero p.lead{font-size:1.14rem;max-width:33ch;margin-bottom:1.9rem}
+  .hero-actions{display:flex;gap:.9rem;flex-wrap:wrap;margin-bottom:1.8rem}
+  .hero-badges{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;font-size:.92rem;font-weight:500;color:var(--teal-deep)}
+  .hero-badges span{display:inline-flex;align-items:center;gap:.45rem}
+  .hero-badges svg{flex:0 0 18px}
+
+  /* Hero art */
+  .hero-art{position:relative}
+  .art-card{background:#fff;border-radius:26px;box-shadow:var(--shadow-lg);padding:30px;position:relative;overflow:hidden}
+  .art-card .ring{position:absolute;width:240px;height:240px;border:26px solid var(--bg-mint);border-radius:50%;right:-70px;bottom:-80px;opacity:.7}
+  .art-smile{position:relative;z-index:2;display:grid;place-items:center;padding:14px 0 22px}
+  .float-pill{position:absolute;z-index:3;background:#fff;border-radius:14px;box-shadow:var(--shadow);padding:.7rem .95rem;display:flex;align-items:center;gap:.6rem;font-family:var(--head);font-weight:600;font-size:.86rem;color:var(--ink)}
+  .float-pill small{display:block;font-family:var(--text);font-weight:500;font-size:.72rem;color:var(--muted)}
+  .float-pill .ic{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;flex:0 0 34px}
+  .fp-1{top:18px;left:-26px}
+  .fp-2{bottom:34px;right:-22px}
+
+  /* Section scaffolding */
+  section{padding:84px 0}
+  .sec-head{text-align:center;max-width:640px;margin:0 auto 54px}
+  .sec-head h2{font-size:clamp(1.8rem,3.4vw,2.5rem);font-weight:700;margin:.7rem 0 .8rem}
+  .sec-head p{font-size:1.06rem;color:var(--body)}
+
+  /* Treatments */
+  .soft{background:var(--bg-soft)}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px;transition:transform .18s ease,box-shadow .18s ease,border-color .18s}
+  .card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:transparent}
+  .card .ic-lg{width:56px;height:56px;border-radius:15px;background:var(--bg-mint);display:grid;place-items:center;margin-bottom:18px}
+  .card h3{font-size:1.2rem;font-weight:600;margin-bottom:.5rem}
+  .card p{font-size:.96rem}
+
+  /* Difference / why */
+  .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .why-list{display:grid;gap:22px;margin-top:26px}
+  .why-item{display:flex;gap:16px;align-items:flex-start}
+  .why-item .ic{width:46px;height:46px;flex:0 0 46px;border-radius:12px;background:var(--teal);display:grid;place-items:center;box-shadow:0 8px 18px rgba(14,143,138,.26)}
+  .why-item h4{font-size:1.08rem;font-weight:600;margin-bottom:.2rem}
+  .why-item p{font-size:.95rem}
+  .why-visual{background:linear-gradient(150deg,var(--teal),var(--teal-deep));border-radius:26px;padding:44px 38px;color:#fff;box-shadow:var(--shadow-lg);position:relative;overflow:hidden}
+  .why-visual:before{content:"";position:absolute;width:300px;height:300px;border:30px solid rgba(255,255,255,.08);border-radius:50%;top:-120px;left:-110px}
+  .why-visual .big{font-family:var(--head);font-weight:700;font-size:3.4rem;line-height:1}
+  .why-visual h3{color:#fff;font-size:1.5rem;margin:.3rem 0 1.3rem}
+  .why-visual ul{list-style:none;display:grid;gap:.85rem}
+  .why-visual li{display:flex;gap:.7rem;align-items:flex-start;font-size:1rem;color:rgba(255,255,255,.95)}
+  .why-visual li svg{flex:0 0 20px;margin-top:3px}
+
+  /* Doctors */
+  .docs{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+  .doc{text-align:center}
+  .doc .av{width:96px;height:96px;border-radius:50%;margin:0 auto 14px;background:linear-gradient(145deg,var(--bg-mint),#d4ebe8);display:grid;place-items:center;border:3px solid #fff;box-shadow:var(--shadow-sm)}
+  .doc .av span{font-family:var(--head);font-weight:700;font-size:1.5rem;color:var(--teal-dark)}
+  .doc h4{font-size:1rem;font-weight:600}
+  .doc p{font-size:.86rem;color:var(--muted)}
+
+  /* Locations (the fix) */
+  .loc-note{display:inline-flex;align-items:center;gap:.5rem;background:var(--bg-mint);color:var(--teal-deep);font-weight:600;font-size:.9rem;padding:.5rem 1rem;border-radius:999px;margin-top:14px}
+  .loc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .loc{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s,border-color .18s}
+  .loc:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:transparent}
+  .loc .top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
+  .loc h3{font-size:1.22rem;font-weight:600}
+  .loc .state{font-family:var(--head);font-weight:600;font-size:.72rem;letter-spacing:.08em;color:var(--teal);background:var(--bg-mint);padding:.25rem .6rem;border-radius:7px}
+  .loc .addr{font-size:.95rem;color:var(--body);display:flex;gap:.55rem;align-items:flex-start;margin-bottom:.6rem}
+  .loc .addr svg{flex:0 0 17px;margin-top:3px}
+  .loc .hours{font-size:.88rem;color:var(--muted);display:flex;gap:.55rem;align-items:flex-start;margin-bottom:18px}
+  .loc .hours svg{flex:0 0 17px;margin-top:2px}
+  .loc .spacer{flex:1}
+  .loc .call{display:flex;align-items:center;justify-content:center;gap:.55rem;width:100%;background:var(--teal);color:#fff;font-family:var(--head);font-weight:600;font-size:1.08rem;padding:.8rem 1rem;border-radius:12px;transition:background .15s,transform .15s}
+  .loc .call:hover{background:var(--teal-dark);transform:translateY(-1px)}
+  .loc .call small{display:block;font-family:var(--text);font-weight:500;font-size:.68rem;opacity:.85;letter-spacing:.04em}
+
+  /* Financing strip */
+  .strip{background:var(--bg-mint)}
+  .strip-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+  .strip-item .ic{width:52px;height:52px;border-radius:14px;background:#fff;display:grid;place-items:center;margin:0 auto 14px;box-shadow:var(--shadow-sm)}
+  .strip-item h4{font-size:1.02rem;font-weight:600;margin-bottom:.3rem}
+  .strip-item p{font-size:.9rem;color:var(--body)}
+
+  /* CTA band */
+  .cta{background:linear-gradient(135deg,var(--teal-dark),var(--teal-deep));color:#fff;text-align:center;border-radius:0}
+  .cta h2{color:#fff;font-size:clamp(1.9rem,3.6vw,2.6rem);margin-bottom:.8rem}
+  .cta p{font-size:1.1rem;color:rgba(255,255,255,.9);max-width:50ch;margin:0 auto 1.9rem}
+  .cta-actions{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap}
+
+  /* Footer */
+  footer{background:var(--ink);color:#c6d4d5;padding:68px 0 30px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 2fr;gap:44px;padding-bottom:42px;border-bottom:1px solid rgba(255,255,255,.1)}
+  footer .brand{color:#fff}
+  footer .brand small{color:#8fa6a7}
+  .foot-about{margin-top:16px;font-size:.94rem;max-width:34ch;color:#a9bcbd}
+  footer h5{font-family:var(--head);color:#fff;font-size:.95rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin-bottom:16px}
+  .foot-links{list-style:none;display:grid;gap:.6rem}
+  .foot-links a{font-size:.94rem;color:#a9bcbd;transition:color .15s}
+  .foot-links a:hover{color:#fff}
+  .foot-locs{display:grid;grid-template-columns:repeat(2,1fr);gap:.55rem 24px}
+  .foot-locs a{display:flex;justify-content:space-between;gap:12px;font-size:.9rem;color:#a9bcbd;padding:.3rem 0;border-bottom:1px solid rgba(255,255,255,.07);transition:color .15s}
+  .foot-locs a:hover{color:#fff}
+  .foot-locs a b{font-family:var(--head);font-weight:600;color:#dfeae9;white-space:nowrap}
+  .foot-bottom{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-top:26px;font-size:.84rem;color:#8fa6a7}
+
+  /* Responsive */
+  @media(max-width:960px){
+    nav.links{display:none}
+    .menu-toggle{display:block}
+    .hero-grid{grid-template-columns:1fr;gap:40px;padding:56px 0 64px}
+    .hero p.lead{max-width:46ch}
+    .why-grid{grid-template-columns:1fr;gap:38px}
+    .docs{grid-template-columns:repeat(3,1fr);gap:26px}
+    .cards,.loc-grid{grid-template-columns:repeat(2,1fr)}
+    .strip-grid{grid-template-columns:repeat(2,1fr);gap:30px}
+    .foot-grid{grid-template-columns:1fr;gap:34px}
+  }
+  @media(max-width:620px){
+    .wrap{padding:0 18px}
+    section{padding:60px 0}
+    .nav-call{display:none}
+    .hero-actions .btn{flex:1 1 auto;justify-content:center}
+    .cards,.loc-grid{grid-template-columns:1fr}
+    .docs{grid-template-columns:repeat(2,1fr)}
+    .strip-grid{grid-template-columns:1fr}
+    .foot-locs{grid-template-columns:1fr}
+    .float-pill{display:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top" aria-label="GO Orthodontics home">
+      <span class="mark"><span>GO</span></span>
+      <span>GO Orthodontics<small>Since 1976</small></span>
+    </a>
+    <nav class="links">
+      <a href="#treatments">Treatments</a>
+      <a href="#why">Why GO</a>
+      <a href="#team">Our Doctors</a>
+      <a href="#locations">Locations</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="nav-call" href="#locations" aria-label="Find your office phone number">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Find your office
+      </a>
+      <a class="btn btn-primary" href="#contact">Book Free Exam</a>
+      <button class="menu-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<a id="top"></a>
+
+<!-- HERO -->
+<section class="hero" style="padding-top:0">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">Braces and Invisalign for every age</span>
+      <h1>Your orthodontist in <span class="hl">Mississippi</span> and <span class="hl">Tennessee</span></h1>
+      <p class="lead">We have cared for families, friends, and neighbors since 1976. Seven welcoming offices, one confident smile at a time.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#contact">Book Your Free Exam</a>
+        <a class="btn btn-ghost" href="#locations">Call Your Nearest Office</a>
+      </div>
+      <div class="hero-badges">
+        <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Serving families since 1976</span>
+        <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>7 convenient locations</span>
+        <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Complimentary first exam</span>
+      </div>
+    </div>
+
+    <div class="hero-art">
+      <div class="art-card">
+        <div class="ring"></div>
+        <div class="art-smile">
+          <!-- friendly tooth + smile SVG, no external image -->
+          <svg width="230" height="210" viewBox="0 0 230 210" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Happy healthy tooth">
+            <ellipse cx="115" cy="186" rx="78" ry="12" fill="#dff0ee"/>
+            <path d="M115 26c-34 0-60 20-60 52 0 26 10 44 16 74 4 20 12 30 22 30 11 0 12-20 22-20s11 20 22 20c10 0 18-10 22-30 6-30 16-48 16-74 0-32-26-52-60-52Z" fill="#ffffff" stroke="#0e8f8a" stroke-width="5"/>
+            <path d="M80 70c6-10 18-16 35-16" stroke="#bfe4e0" stroke-width="7" stroke-linecap="round"/>
+            <circle cx="95" cy="108" r="7" fill="#15282b"/>
+            <circle cx="135" cy="108" r="7" fill="#15282b"/>
+            <path d="M92 134c8 9 30 9 46 0" stroke="#15282b" stroke-width="5" stroke-linecap="round"/>
+            <circle cx="79" cy="126" r="7" fill="#ffd0b3"/>
+            <circle cx="151" cy="126" r="7" fill="#ffd0b3"/>
+            <path d="M178 44l5 12 12 5-12 5-5 12-5-12-12-5 12-5 5-12Z" fill="#ff8a4c"/>
+            <path d="M44 86l3 8 8 3-8 3-3 8-3-8-8-3 8-3 3-8Z" fill="#0e8f8a"/>
+          </svg>
+        </div>
+        <div class="float-pill fp-1">
+          <span class="ic" style="background:var(--bg-mint)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </span>
+          Same day braces<small>Start treatment faster</small>
+        </div>
+        <div class="float-pill fp-2">
+          <span class="ic" style="background:#fff2e9">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-dark)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"/></svg>
+          </span>
+          Kids, teens, adults<small>Care for the whole family</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TREATMENTS -->
+<section id="treatments" class="soft">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Our Treatments</span>
+      <h2>Straighter smiles, built around your life</h2>
+      <p>From a child's first visit to a confident new smile as an adult, we offer the full range of modern orthodontic care under one roof.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="ic-lg"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="8" rx="2"/><path d="M7 8v8M11 8v8M15 8v8M3 12h18"/></svg></div>
+        <h3>Traditional Metal Braces</h3>
+        <p>Dependable, proven, and more comfortable than ever for dramatic, lasting results.</p>
+      </div>
+      <div class="card">
+        <div class="ic-lg"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12a4 4 0 0 1 8 0"/></svg></div>
+        <h3>Clear and Gold Braces</h3>
+        <p>Subtle clear brackets or a bit of gold personality. Great correction with a lighter look.</p>
+      </div>
+      <div class="card">
+        <div class="ic-lg"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h12l-1.5 7a4.5 4.5 0 0 1-9 0L6 4Z"/><path d="M6 20h12"/><path d="M9 20v-3M15 20v-3"/></svg></div>
+        <h3>Invisalign</h3>
+        <p>Clear, removable aligners for kids, teens, and adults who want to straighten discreetly.</p>
+      </div>
+      <div class="card">
+        <div class="ic-lg"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11V6a3 3 0 0 1 6 0v5"/><rect x="5" y="11" width="14" height="10" rx="2"/></svg></div>
+        <h3>Braces for Kids and Teens</h3>
+        <p>Early, age-appropriate care that guides growing smiles toward a healthy bite.</p>
+      </div>
+      <div class="card">
+        <div class="ic-lg"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M5 7l7-5 7 5M5 7v10l7 5 7-5V7"/></svg></div>
+        <h3>Braces for Adults</h3>
+        <p>It is never too late. Modern options make adult treatment efficient and easy to wear.</p>
+      </div>
+      <div class="card">
+        <div class="ic-lg"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg></div>
+        <h3>Same Day Braces</h3>
+        <p>When you are ready, we may be able to begin treatment the same day as your exam.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why">
+  <div class="wrap why-grid">
+    <div>
+      <span class="eyebrow">The GO Orthodontics Difference</span>
+      <h2>Advanced care that feels personal</h2>
+      <p>With GO Orthodontics, you can expect advanced technology, flexible financing, and exceptional results, delivered by a team that treats you like a neighbor.</p>
+      <div class="why-list">
+        <div class="why-item">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <div><h4>A complimentary first exam</h4><p>Your first visit is a free smile exam and consultation. We review your options with no pressure to begin.</p></div>
+        </div>
+        <div class="why-item">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+          <div><h4>Flexible financing and insurance</h4><p>We help you understand your coverage and offer payment options that fit your family's budget.</p></div>
+        </div>
+        <div class="why-item">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span>
+          <div><h4>Advanced technology</h4><p>Digital imaging and modern appliances mean more comfort, fewer visits, and precise results.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="why-visual">
+      <div class="big">1976</div>
+      <h3>Nearly fifty years of local smiles</h3>
+      <ul>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Trusted across Mississippi and Tennessee</li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Five experienced orthodontists on your team</li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Braces and Invisalign for every age</li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Virtual consultations when you cannot come in</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- DOCTORS -->
+<section id="team" class="soft">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Meet Our Doctors</span>
+      <h2>The orthodontists behind your smile</h2>
+      <p>Your care is led by a team of experienced orthodontists who see patients across all seven offices.</p>
+    </div>
+    <div class="docs">
+      <div class="doc"><div class="av"><span>TG</span></div><h4>Dr. Todd Gililland</h4><p>Orthodontist</p></div>
+      <div class="doc"><div class="av"><span>SO</span></div><h4>Dr. Shawn O'Bannon</h4><p>Orthodontist</p></div>
+      <div class="doc"><div class="av"><span>MG</span></div><h4>Dr. Morgan W. Gonder</h4><p>Orthodontist</p></div>
+      <div class="doc"><div class="av"><span>SR</span></div><h4>Dr. Shane Radford</h4><p>Orthodontist</p></div>
+      <div class="doc"><div class="av"><span>LC</span></div><h4>Dr. Li-Ping Chew</h4><p>Orthodontist</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATIONS (the fix) -->
+<section id="locations">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Our Locations</span>
+      <h2>Seven offices across Mississippi and Tennessee</h2>
+      <p>Find the office nearest you below. Every number you see is tap to call, and the call connects you straight to that office.</p>
+      <div class="loc-note">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        Tap to call goes to the office shown
+      </div>
+    </div>
+    <div class="loc-grid">
+
+      <div class="loc">
+        <div class="top"><h3>Oxford</h3><span class="state">MS</span></div>
+        <div class="addr"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>2408 S Lamar Blvd, Ste 2<br>Oxford, MS 38655</span></div>
+        <div class="hours"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Mon to Thu, 8am to 5pm<br>Fri, 8am to 12pm</span></div>
+        <div class="spacer"></div>
+        <a class="call" href="tel:+16622344822"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>(662) 234-4822<small>Tap to call</small></span></a>
+      </div>
+
+      <div class="loc">
+        <div class="top"><h3>Saltillo</h3><span class="state">MS</span></div>
+        <div class="addr"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>104 Desert Cove<br>Saltillo, MS 38866</span></div>
+        <div class="hours"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Mon to Thu, 8am to 5pm<br>Fri, 8am to 12pm</span></div>
+        <div class="spacer"></div>
+        <a class="call" href="tel:+16628426669"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>(662) 842-6669<small>Tap to call</small></span></a>
+      </div>
+
+      <div class="loc">
+        <div class="top"><h3>Southaven</h3><span class="state">MS</span></div>
+        <div class="addr"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>2925 Nail Rd E, Ste 2<br>Southaven, MS 38672</span></div>
+        <div class="hours"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Mon to Thu, 8am to 5pm<br>Fri, 8am to 12pm</span></div>
+        <div class="spacer"></div>
+        <a class="call" href="tel:+16625363661"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>(662) 536-3661<small>Tap to call</small></span></a>
+      </div>
+
+      <div class="loc">
+        <div class="top"><h3>Corinth</h3><span class="state">MS</span></div>
+        <div class="addr"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>1500 N Harper Rd, Ste 5<br>Corinth, MS 38834</span></div>
+        <div class="hours"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Mon to Thu, 8am to 5pm</span></div>
+        <div class="spacer"></div>
+        <a class="call" href="tel:+16622863891"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>(662) 286-3891<small>Tap to call</small></span></a>
+      </div>
+
+      <div class="loc">
+        <div class="top"><h3>Collierville</h3><span class="state">TN</span></div>
+        <div class="addr"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>3615 S Houston Levee Rd, Ste 104<br>Collierville, TN 38017</span></div>
+        <div class="hours"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Mon to Thu, 8am to 5pm<br>Fri, 8am to 12pm</span></div>
+        <div class="spacer"></div>
+        <a class="call" href="tel:+19018505874"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>(901) 850-5874<small>Tap to call</small></span></a>
+      </div>
+
+      <div class="loc">
+        <div class="top"><h3>Columbus</h3><span class="state">MS</span></div>
+        <div class="addr"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>2500 Military Rd, Ste 3<br>Columbus, MS 39705</span></div>
+        <div class="hours"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>By appointment, call to schedule</span></div>
+        <div class="spacer"></div>
+        <a class="call" href="tel:+16623294225"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>(662) 329-4225<small>Tap to call</small></span></a>
+      </div>
+
+      <div class="loc">
+        <div class="top"><h3>Starkville</h3><span class="state">MS</span></div>
+        <div class="addr"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>201 Academy Rd #6<br>Starkville, MS 39759</span></div>
+        <div class="hours"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>By appointment, call to schedule</span></div>
+        <div class="spacer"></div>
+        <a class="call" href="tel:+16626746620"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>(662) 674-6620<small>Tap to call</small></span></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FINANCING STRIP -->
+<section class="strip" style="padding:64px 0">
+  <div class="wrap strip-grid">
+    <div class="strip-item">
+      <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5ZM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+      <h4>Free first exam</h4><p>Your smile consultation is always complimentary.</p>
+    </div>
+    <div class="strip-item">
+      <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+      <h4>Flexible financing</h4><p>Payment options that work for your family.</p>
+    </div>
+    <div class="strip-item">
+      <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div>
+      <h4>Insurance welcome</h4><p>We help you make the most of your benefits.</p>
+    </div>
+    <div class="strip-item">
+      <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l-4 4-2-2"/><rect x="3" y="4" width="18" height="16" rx="2"/></svg></div>
+      <h4>Virtual consults</h4><p>Start from home when you cannot come in.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact" class="cta">
+  <div class="wrap">
+    <h2>Ready for your free smile exam?</h2>
+    <p>Book your complimentary consultation and meet a team that has straightened smiles across Mississippi and Tennessee since 1976. There is no pressure to begin, just answers.</p>
+    <div class="cta-actions">
+      <a class="btn btn-white" href="#locations">Book Your Free Exam</a>
+      <a class="btn btn-outline-white" href="#locations">Call Your Nearest Office</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="#top">
+          <span class="mark"><span>GO</span></span>
+          <span>GO Orthodontics<small>Since 1976</small></span>
+        </a>
+        <p class="foot-about">Braces and Invisalign for kids, teens, and adults across seven offices in Mississippi and Tennessee.</p>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul class="foot-links">
+          <li><a href="#treatments">Treatments</a></li>
+          <li><a href="#why">Why GO Orthodontics</a></li>
+          <li><a href="#team">Our Doctors</a></li>
+          <li><a href="#locations">Locations</a></li>
+          <li><a href="#contact">Book a Free Exam</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Call an office</h5>
+        <div class="foot-locs">
+          <a href="tel:+16622344822"><span>Oxford, MS</span><b>(662) 234-4822</b></a>
+          <a href="tel:+16628426669"><span>Saltillo, MS</span><b>(662) 842-6669</b></a>
+          <a href="tel:+16625363661"><span>Southaven, MS</span><b>(662) 536-3661</b></a>
+          <a href="tel:+16622863891"><span>Corinth, MS</span><b>(662) 286-3891</b></a>
+          <a href="tel:+19018505874"><span>Collierville, TN</span><b>(901) 850-5874</b></a>
+          <a href="tel:+16623294225"><span>Columbus, MS</span><b>(662) 329-4225</b></a>
+          <a href="tel:+16626746620"><span>Starkville, MS</span><b>(662) 674-6620</b></a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 GO Orthodontics. All rights reserved.</span>
+      <span>Your orthodontist in Mississippi and Tennessee.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
